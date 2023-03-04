@@ -34,7 +34,7 @@ class App extends React.Component {
         )
     }
 
-    onChangeHandler = (e) => {
+    onChangeHandler = e => {
         this.setState({
             listFiltered: this.state.list.filter(item => {
                 return item.name.includes(e.target.value)
