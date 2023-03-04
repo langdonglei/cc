@@ -3,47 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../node_modules/@babel/standalone/babel.min.js"></script>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
 </head>
-<body>124
-<div id="app">
-    <ChirldComponent/>
-</div>
-<script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
-<div id="output"></div>
-<!-- Load Babel -->
-<!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<!-- Your custom script here -->
-<script type="text/babel">
-    const getMessage = () => "Hello World";
-    document.getElementById('output').innerHTML = getMessage();
-</script>
-<!--<script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>-->
-<!--<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>-->
-<!--<script type="text/babel">-->
-<!--    function ChirldComponent() {-->
-<!--        console.log(this); // 此处的this是undefined，因为babel编译开启后开启了严格模式-->
-<!--        return <h3>This is a chirld component</h3>-->
-<!--    }-->
-
-<!--    // ReactDOM.render(document.getElementById('app'))-->
-
-<!--    class ShoppingList extends React.Component {-->
-<!--        render() {-->
-<!--            return (-->
-<!--                <div className="shopping-list">-->
-<!--                    <h1>Shopping List for {this.props.name}</h1>-->
-<!--                    <ul>-->
-<!--                        <li>Instagram</li>-->
-<!--                        <li>WhatsApp</li>-->
-<!--                        <li>Oculus</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            );-->
-<!--        }-->
-<!--    }-->
-
-<!--    <ShoppingList name="Mark" />-->
-<!--</script>-->
+<body>
+<div id="root"></div>
+<script type="text/babel" src="App.js"></script>
+<script type="text/babel" src="index.js"></script>
 </body>
 </html>
