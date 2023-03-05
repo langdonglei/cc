@@ -1,4 +1,4 @@
-class App extends React.Component {
+class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +11,9 @@ class App extends React.Component {
         fetch('https://pokeapi.co/api/v2/pokemon').then(res => {
             return res.json()
         }).then(res => {
+            res.results.map((item, index) => {
+                item.id = index + 1;
+            })
             this.setState({
                 list        : res.results,
                 listFiltered: res.results,
@@ -22,14 +25,8 @@ class App extends React.Component {
         return (
             <div>
                 <h1>hhh</h1>
-                <input type="text" onChange={this.onChangeHandler}/>
-                <ul>
-                    {
-                        this.state.listFiltered.map((item, index) => {
-                            return <li key={index}>{item.name}</li>
-                        })
-                    }
-                </ul>
+                <Input onChange={this.onChangeHandler}/>
+                <List data={this.state.listFiltered}/>
             </div>
         )
     }

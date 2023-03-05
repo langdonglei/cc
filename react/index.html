@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>test</title>
     <script src="../node_modules/@babel/standalone/babel.min.js"></script>
     <script src="../node_modules/react/umd/react.development.js"></script>
     <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel" src="App.js"></script>
-<script type="text/babel" src="index.js"></script>
+<div id="react"></div>
+<script type="text/babel" src="component/Input.js"></script>
+<script type="text/babel" src="component/List.js"></script>
+<script type="text/babel" src="component/Demo.js"></script>
+<script type="text/babel">
+    ReactDOM.createRoot(document.getElementById("react")).render(<Demo/>)
+</script>
 </body>
 </html>
