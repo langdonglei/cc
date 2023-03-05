@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>dan</title>
+    <script src="../../node_modules/@babel/standalone/babel.min.js"></script>
+    <script src="../../node_modules/react/umd/react.development.js"></script>
+    <script src="../../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script type="text/babel" src="../component/Input.js"></script>
+    <script type="text/babel" src="../component/List.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                list        : [],
+                listFiltered: [],
+            }
+        }
+
+        componentDidMount() {
+            fetch('https://pokeapi.co/api/v2/pokemon').then(res => {
+                return res.json()
+            }).then(res => {
+                res.results.map((item, index) => {
+                    item.id = index + 1;
+                })
+                this.setState({
+                    list        : res.results,
+                    listFiltered: res.results,
+                })
+            })
+        }
+
+        render() {
+            return (
+                <div>
+                    <Input onChange={this.onChangeHandler}/>
+                    <List data={this.state.listFiltered}/>
+                </div>
+            )
+        }
+
+        onChangeHandler = e => {
+            this.setState({
+                listFiltered: this.state.list.filter(item => {
+                    return item.name.includes(e.target.value)
+                })
+            })
+        }
+    }
+
+    ReactDOM.createRoot(document.getElementById("app")).render(<App/>)
+</script>
+</body>
+</html>

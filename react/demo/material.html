@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My page</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    <script src="../../node_modules/@babel/standalone/babel.min.js"></script>
+    <script src="../../node_modules/react/umd/react.development.js"></script>
+    <script src="../../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../../node_modules/@mui/material/umd/material-ui.development.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const {
+              colors,
+              CssBaseline,
+              ThemeProvider,
+              Typography,
+              Container,
+              createTheme,
+              Box,
+              SvgIcon,
+              Link,
+              Button,
+          } = MaterialUI;
+
+
+    function App() {
+        return (
+            <Container maxWidth="sm">
+                <Box sx={{my: 4}}>
+                    <Button variant="contained">Contained</Button>
+                    <Typography variant="h4" component="h1" gutterBottom>
+                        https://mui.com/
+                    </Typography>
+                    <Typography sx={{mt: 6, mb: 3}} color="text.secondary">
+                        <SvgIcon sx={{mr: 1, verticalAlign: 'top'}}>
+                            <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                        </SvgIcon>
+                        Pro tip: See more{' '}
+                        <Link href="https://mui.com/getting-started/templates/">templates</Link> in the MUI
+                        documentation.
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" align="center">
+                        {'Copyright © '}
+                        <Link color="inherit" href="https://mui.com/">Your Website</Link>
+                        &nbsp;&nbsp;
+                        {new Date().getFullYear()}
+                    </Typography>
+                </Box>
+            </Container>
+        );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
+</script>
+</body>
+</html>
